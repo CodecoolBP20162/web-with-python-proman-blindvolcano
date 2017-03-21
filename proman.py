@@ -10,7 +10,7 @@ app.config.update(dict(
 
 @app.route('/')
 def root():
-    return render_template('index.html')
+    return render_template('cards.html')
 
 
 if __name__ == "__main__":
