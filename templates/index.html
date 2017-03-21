@@ -1,10 +1,28 @@
 <html>
 <head>
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
     <script src="static/index.js"></script>
 </head>
 
-<body>
-</body>
 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">ProMan</a>
+    </div>
+  </div>
+</nav>
+<h1>Write and edit cards online, for FREE</h1>
+<body>
+<ul>
+  <li><a href="#" class="round green">+<span class="round">Create new board.</span></a></li>
+</ul>
+</body>
 </html>
