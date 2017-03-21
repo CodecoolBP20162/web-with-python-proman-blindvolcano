@@ -7,14 +7,10 @@
 		box-sizing: border-box;
 	}
 
-	body {
-		width: 100%;
-		height: 100%;
-		font-family: "helvetica neue", helvetica, arial, sans-serif;
-		font-size: 13px;
-		text-align: center;
-		background: #333 url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/low_contrast_linen.png');
-	}
+body {
+    background-image: url("background.png");
+	background-size: 1300px 800px;
+}
 
 	ul {
 		margin: 50px auto;
@@ -157,4 +153,9 @@
 		background: rgba(161,145,0,.7);
 
 	}
+
+	h1 {
+    text-align: center;
+}
+
 
