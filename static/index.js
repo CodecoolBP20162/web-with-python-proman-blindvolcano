@@ -17,7 +17,8 @@ $(document).ready(function () {
         }
     };
 
-    //Add new board 
+    //Add new board
+
     $("#add_new_board").click(function () {
         var board_title = $("#boardTitle").val();
         var board = new Board(board_title);
@@ -60,7 +61,7 @@ $(document).ready(function () {
                     boardList[board].cardlist = [];
                 };
             };
-           
+          
             localStorage.setItem("boardList", JSON.stringify(boardList));
         }
     });
