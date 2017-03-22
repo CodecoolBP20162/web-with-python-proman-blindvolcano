@@ -10,8 +10,15 @@ app.config.update(dict(
 
 @app.route('/')
 def root():
+    return render_template('index.html')
+
+@app.route('/cards')
+def cards():
     return render_template('cards.html')
 
+@app.route('/boards')
+def boards():
+    return render_template('boards.html')
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=5000)

@@ -1,3 +1,18 @@
+
+@font-face {
+    font-family: font1;
+    src: url(fonts/Italic.ttf);
+}
+@font-face {
+    font-family: font2;
+    src: url(fonts/ailerons.ttf);
+}
+
+@font-face {
+    font-family: font3;
+    src: url(fonts/RBNo2Light.otf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +23,7 @@
 	}
 
 body {
-    background-image: url("background.png");
+    background-image: url("pics/background.png");
 	background-size: 1300px 800px;
 }
 
@@ -19,7 +34,9 @@ body {
 
 	li {
 		list-style: none;
-		position: relative;
+		position: fixed;
+		left: 600px;
+		bottom: 180px;
 		display: inline-block;
 		width: 100px;
 		height: 100px;
@@ -58,7 +75,7 @@ body {
 		font-size: 25px;
 		text-shadow: 0 1px 0 rgba(255,255,255,.7);
 		letter-spacing: -.065em;
-		font-family: "Hammersmith One", sans-serif;
+		font-family: font2;
 		-webkit-transition: all .25s ease-in-out;
 		-o-transition: all .25s ease-in-out;
 		-moz-transition: all .25s ease-in-out;
@@ -156,6 +173,26 @@ body {
 
 	h1 {
     text-align: center;
+	font-family: font2;
+	font-size: 50px;
+    color: white;
+
 }
 
 
+	h2 {
+    text-align: center;
+	font-family: font2;
+	font-size: 30px;
+    color: white;
+}
+
+ nav {
+     font-family: font3;
+        }
+.nav a{
+    color: white !important;
+    }
+.nav li{
+    padding-right:5px;
+   }
