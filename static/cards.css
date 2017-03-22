@@ -7,7 +7,7 @@
   float:left;
 }
 #post-it-container {
-  perspective: 1000;
+  perspective: 0;
 }
 #post-it-card {
   width: 100%;
@@ -35,22 +35,32 @@ box-shadow: 2px 2px 9px rgba(194,194,194,.9);
   padding: 5px;
   color: black;
   text-align: center;
-  background-color: #d;
+  background-color: lightcyan;
   font-size:1em;
 }
+
+@font-face {
+    font-family: font1;
+    src: url(fonts/Italic.ttf);
+}
+@font-face {
+    font-family: font2;
+    src: url(fonts/ailerons.ttf);
+}
+
 
 div.strategy {
 margin:0;
 float: left;
 color: #151515;
-background: #ffc;
+background: antiquewhite;
 display: block;
-height: 7.5em;
-width: 7.5em;
+height: 10em;
+width: 10em;
 padding: 1em;
+font-family: font1;
 text-align: center;
-font-family: "Gloria Hallelujah","Lato","Helvetica Neue", Arial, sans-serif;
-font-size: 0.9rem;
+font-size: 1rem;
 -moz-box-shadow: 2px 2px 9px rgba(194,194,194,.5);
 -webkit-box-shadow: 2px 2px 9px rgba(194,194,194,.5);
 box-shadow: 2px 2px 9px rgba(194,194,194,.5);
@@ -85,4 +95,8 @@ box-shadow: 2px 2px 9px rgba(194,194,194,.5);
   -moz-transform:rotate(5deg);
   position:relative;
   top:-10px;
+}
+
+p.italic{
+  font-family: font1;
 }
