@@ -1,0 +1,1 @@
+document.write('<ul><li><a href="http://google.com" target="blank">Google</a></')
