@@ -10,14 +10,14 @@ $(document).ready(function () {
         this.cardtext = cardtext;
     }
 
-    // LIST BOARDS /////////////////////////////////////////////////////////////////
+    //Board list
     function listBoards(list_of_boards) {
         for (var oneBoard in list_of_boards) {
             createBoard(list_of_boards[oneBoard]);
         }
     };
 
-    // ADD NEW BOARD
+    //Add new board
     $("#add_new_board").click(function () {
         var board_title = $("#boardTitle").val();
         var board = new Board(board_title);
@@ -28,7 +28,9 @@ $(document).ready(function () {
         board_title = $("#boardTitle").val("");
     });
 
-    // FUNC. CREATE BOARD DIV
+
+
+    //Create board
     function createBoard(item) {
         $(".divBoard").append(
             "<div class='col-sm-3'>" +
@@ -41,7 +43,7 @@ $(document).ready(function () {
         $(".label:last").html(item.cardlist.length);
     }
 
-    // LIST CARDS ///////////////////////////////////////////////////////////////
+    //Card list
     function listCards(list_of_cards) {
         for (var card in list_of_cards) {
             createCard(list_of_cards[card]);
@@ -67,7 +69,7 @@ $(document).ready(function () {
         };
     };
 
-    // FUNC. CREATE CARD DIV
+    //Card Create
     function createCard(item) {
         $(".divCard").append(
             "<div class='col-sm-3'>" +
@@ -81,7 +83,7 @@ $(document).ready(function () {
     }
 
 
-    // ADD NEW CARD
+    // New cards
     $("#add_new_card").click(function () {
         var card_title = $("#cardTitle").val();
         var card_text = $("#cardText").val();
@@ -98,23 +100,8 @@ $(document).ready(function () {
 
     });
 
-    // START ///////////////////////////////////////////////////////////////
-    var board1 = new Board("I'm a board");
-    var board2 = new Board("Me too ^-^");
-    var board3 = new Board("I'm bored :(")
-    var board4 = new Board("I'm James Board")
-    var loadBoard = JSON.parse(localStorage.getItem("boardList"));
-    if (loadBoard) {
-        boardList = loadBoard;
-        listBoards(loadBoard);
-    } else {
-        boardList.push(board1);
-        boardList.push(board2);
-        boardList.push(board3);
-        boardList.push(board4);
-        listBoards(boardList);
-        localStorage.setItem("boardList", JSON.stringify(boardList))
-    };
+
+
     getBoardTitle();
     detailedBoard();
     $('.divCard').sortable({
