@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='boards.css') }}" rel="stylesheet">
+    <script src="static/index.js"></script>
+        <meta charset="utf-8">
+    <title>Flat Pricing Tables</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+<body>
+<div class="pricing-table-signup-tiny">
+  <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Create new green board</a></p>
+</div>
+<div class="pricing-table-signup-small">
+  <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Create new orange board</a></p>
+</div>
+ <div class="pricing-table-signup-medium">
+    <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Create new red board</a></p>
+</div>
+<div class="pricing-table-signup-pro">
+    <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Create new blue board</a></p>
+</div>
+</body>
+</html>
