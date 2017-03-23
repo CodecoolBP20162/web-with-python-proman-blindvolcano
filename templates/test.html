@@ -1,0 +1,52 @@
+<html>
+
+<head>
+</head>
+
+<body id="body">
+    <script>
+        var boardlist = []
+
+        var checkboard = function () {
+            if (localStorage.getItem("boardlist") === null) {
+                var oldboard = { name: "oldboard" };
+                var newboard = { name: "newboard" };
+                var testboard = { name: "testboard" };
+                boardlist = [oldboard, newboard, testboard];
+            }
+            else {
+                boardlist = loadboardlist();
+            }
+        };
+
+        var printboard = function () {
+            for (var i = 0; i < boardlist.length; i++) {
+                var para = document.createElement("div");
+                var para2 = document.createElement("h2");
+                var node = document.createTextNode(boardlist[i].name);
+                para2.appendChild(node);
+                para.appendChild(para2);
+                var element = document.getElementById("body");
+                element.appendChild(para);
+            }
+        };
+
+        var saveboard = function () {
+            boardlist[0].name = "localoldboard";
+            boardlist[1].name = "localnewboard";
+            boardlist[2].name = "localtestboard";
+            localStorage.setItem("boardlist", JSON.stringify(boardlist))
+
+        };
+
+        var loadboardlist = function () {
+            var bl = JSON.parse(localStorage.getItem("boardlist"));
+            return bl
+        };
+        checkboard();
+        printboard();
+        saveboard();
+    </script>
+</body>
+
+</html>

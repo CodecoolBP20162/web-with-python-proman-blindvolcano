@@ -12,17 +12,25 @@ app.config.update(dict(
 def root():
     return render_template('index.html')
 
+
 @app.route('/cards')
 def cards():
     return render_template('cards.html')
+
 
 @app.route('/boards')
 def boards():
     return render_template('boards.html')
 
+
 @app.route('/createboards')
 def boards2():
     return render_template('createboards.html')
+
+
+@app.route('/k')
+def krokitest():
+    return render_template('test.html')
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=5000)
