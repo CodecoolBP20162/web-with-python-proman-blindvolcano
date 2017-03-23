@@ -5,43 +5,43 @@ $(document).ready(function () {
         this.cardlist = cardlist;
     };
 
-    function Card(title, cardtext) {
+    function Card(title, cardcontent) {
         this.title = title;
-        this.cardtext = cardtext;
+        this.cardcontent = cardcontent;
     }
 
-    //Board list
-    function listBoards(list_of_boards) {
-        for (var oneBoard in list_of_boards) {
-            createBoard(list_of_boards[oneBoard]);
-        }
-    };
+    // //Board list
+    // function listBoards(list_of_boards) {
+    //     for (var oneBoard in list_of_boards) {
+    //         createBoard(list_of_boards[oneBoard]);
+    //     }
+    // };
 
-    //Add new board
-    $("#add_new_board").click(function () {
-        var board_title = $("#boardTitle").val();
-        var board = new Board(board_title);
-        localStorage.setItem("boardTitle", board_title)
-        boardList.push(board);
-        localStorage.setItem("boardList", JSON.stringify(boardList));
-        createBoard(board);
-        board_title = $("#boardTitle").val("");
-    });
+    // //Add new board
+    // $("#add_new_board").click(function () {
+    //     var board_title = $("#boardTitle").val();
+    //     var board = new Board(board_title);
+    //     localStorage.setItem("boardTitle", board_title)
+    //     boardList.push(board);
+    //     localStorage.setItem("boardList", JSON.stringify(boardList));
+    //     createBoard(board);
+    //     board_title = $("#boardTitle").val("");
+    // });
 
 
 
-    //Create board
-    function createBoard(item) {
-        $(".divBoard").append(
-            "<div class='col-sm-3'>" +
-            "<a href='/cards' style='color:white'><div class='col-sm-12 board'>" +
-            "<div class='boardTitle'><h1></h1></div>" +
-            "<h2></h2>" +
-            "</div></a></div>");
-        $(".board h1:last").html(item.title);
-        $(".board h2:last").html("cards <span class='label label-success'></span> ");
-        $(".label:last").html(item.cardlist.length);
-    }
+    // //Create board
+    // function createBoard(item) {
+    //     $(".divBoard").append(
+    //         "<div class='col-sm-3'>" +
+    //         "<a href='/cards' style='color:white'><div class='col-sm-12 board'>" +
+    //         "<div class='boardTitle'><h1></h1></div>" +
+    //         "<h2></h2>" +
+    //         "</div></a></div>");
+    //     $(".board h1:last").html(item.title);
+    //     $(".board h2:last").html("cards <span class='label label-success'></span> ");
+    //     $(".label:last").html(item.cardlist.length);
+    // }
 
     //Card list
     function listCards(list_of_cards) {
@@ -78,7 +78,7 @@ $(document).ready(function () {
             "<div><h2></h2></div>" +
             "</div></div>");
         $(".card h1:last").html(item.title);
-        $(".card h2:last").html(item.cardtext);
+        $(".card h2:last").html(item.cardcontent);
 
     }
 
@@ -86,8 +86,8 @@ $(document).ready(function () {
     // New cards
     $("#add_new_card").click(function () {
         var card_title = $("#cardTitle").val();
-        var card_text = $("#cardText").val();
-        var card = new Card(card_title, card_text);
+        var card_content = $("#cardContent").val();
+        var card = new Card(card_title, card_content);
         for (board in boardList) {
             if (boardList[board].title === localStorage.getItem("boardTitle")) {
                 boardList[board].cardlist.push(card);
@@ -96,7 +96,7 @@ $(document).ready(function () {
         localStorage.setItem("boardList", JSON.stringify(boardList));
         createCard(card);
         card_title = $("#cardTitle").val("");
-        card_text= $("#cardText").val("");
+        card_content= $("#cardContent").val("");
 
     });
 
@@ -113,8 +113,8 @@ $(document).ready(function () {
             };
             $('.card').each(function () {
                 var card_title = $(this).find("h1").html();
-                var card_text = $(this).find("h2").html();
-                var card = new Card(card_title, card_text);
+                var card_content = $(this).find("h2").html();
+                var card = new Card(card_title, card_content);
                 for (board in boardList) {
                     if (boardList[board].title === localStorage.getItem("boardTitle")) {
                         boardList[board].cardlist.push(card);
