@@ -1,19 +1,5 @@
 /* Styles for Pricing Tables */
 
-@font-face {
-    font-family: font1;
-    src: url(fonts/Italic.ttf);
-}
-@font-face {
-    font-family: font2;
-    src: url(fonts/ailerons.ttf);
-}
-
-@font-face {
-    font-family: font3;
-    src: url(fonts/RBNo2Light.otf);
-}
-
 body {
 	font-family: font2;
 	text-align: center;
@@ -995,8 +981,6 @@ a.text-success:focus {
   text-align: center;
 }
 
-h1,
-h2,
 h3,
 h4,
 h5,
@@ -7542,4 +7526,18 @@ a.badge:focus {
     height: auto !important;
     overflow: visible !important;
   }
+}
+
+@font-face {
+    font-family: font1;
+    src: url(fonts/Italic.ttf);
+}
+@font-face {
+    font-family: font2;
+    src: url(fonts/ailerons.ttf);
+}
+
+@font-face {
+    font-family: font3;
+    src: url(fonts/RBNo2Light.otf);
 }

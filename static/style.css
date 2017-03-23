@@ -196,3 +196,38 @@ body {
 .nav li{
     padding-right:5px;
    }
+
+.button {
+
+            background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+			position: absolute;
+			left: 80%;
+			top: 80%;
+        }
+
+.button_x {
+
+            background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+			position: absolute;
+			left: 85%;
+			top: 1%;
+}
+
+.button_c {border-radius: 50%;}
+
+  .roundbutton{
+      display:block;
+      height: 300px;
+      width: 300px;
+      border-radius: 50%;
+      border: 1px solid red;
+
+    }

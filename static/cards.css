@@ -1,6 +1,6 @@
 #post-it-container {
   position: relative;
-  margin: 5px;
+  margin: 10px;
   width: 10em;
   height: 10em;
   z-index: 1;
@@ -32,11 +32,12 @@ box-shadow: 2px 2px 9px rgba(194,194,194,.9);
   display: block;
   transform: rotateY(180deg);
   box-sizing: border-box;
-  padding: 5px;
+  padding: 50px;
   color: black;
-  text-align: center;
+  text-align: left;
   background-color: lightcyan;
-  font-size:1em;
+  font-size:15px;
+  font-family: font1;
 }
 
 @font-face {
@@ -98,5 +99,10 @@ box-shadow: 2px 2px 9px rgba(194,194,194,.5);
 }
 
 p.italic{
-  font-family: font1;
+  font-family: font2;
+}
+
+@font-face {
+    font-family: font3;
+    src: url(fonts/RBNo2Light.otf);
 }
