@@ -1,35 +1,16 @@
 <html>
-<head>
-    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
-    <script src="static/index.js"></script>
-</head>
-
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-        <a class="navbar-brand" href="#"><img style="max-width:80px; margin-top: -15px;"
-             src="/static/pics/logo.png"></a>
-      <a class="navbar-brand" href=""{{ url_for('root') }}"">Home</a>
-        <a class="navbar-brand" href="#">My Boards</a>
-        <a class="navbar-brand" href="{{ url_for('boards2') }}">Create new board</a>
-    </div>
-  </div>
-</nav>
-<h1>1. Create your board</h1>
-<h1>2. Write and edit your cards</h1>
-<h2> 100% FREE</h2>
-<body>
-<ul>
-  <li><a href="{{ url_for('boards') }}" class="round yellow">+<span class="round">Create new board.</span></a></li>
-</ul>
-
+{% extends "layout.html" %}
+    {% block head %}{{ super() }}{% endblock %}
+    {% block nav %}{{ super() }}{% endblock %}
+{% block content %}
+  <body>
+    <h1>1. Create your board</h1>
+    <h1>2. Write and edit your cards</h1>
+    <h2> 100% FREE</h2>
+    <ul>
+      <li><a href="{{ url_for('boards') }}" class="round yellow">+<span class="round">
+          Create new board.</span></a></li>
+    </ul>
 </body>
+{% endblock %}
 </html>

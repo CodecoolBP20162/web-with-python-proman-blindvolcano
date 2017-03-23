@@ -196,3 +196,27 @@ body {
 .nav li{
     padding-right:5px;
    }
+
+.button {
+
+            background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+			position: absolute;
+			left: 80%;
+			top: 80%;
+        }
+
+.button_x {
+
+            background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+			position: absolute;
+			left: 85%;
+			top: 1%;
+}
