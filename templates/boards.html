@@ -1,11 +1,9 @@
 <html>
-{% extends "layout.html" %}
-    {% block head %}{{ super() }}{% endblock %}
-    {% block nav %}{{ super() }}{% endblock %}
-{% block content %}
-    <body>
-    <div    style="background: white"
-    class="container-fluid">
+{% extends "layout.html" %} {% block head %}{{ super() }}{% endblock %} {% block nav %}{{ super() }}{% endblock %} {% block
+content %}
+
+<body>
+    <div style="background: white" class="container-fluid">
         <div class="row-fluid">
             <div class="span3 tiny ">
                 <div class="pricing-table-header-tiny">
@@ -20,58 +18,117 @@
                     <p><strong>Card name</strong></p>
                 </div>
                 <div class="pricing-table-signup-tiny">
-                  <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Edit cards</a></p>
+                    <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Edit cards</a></p>
                 </div>
+            </div>
+            <div class="span3 small">
+                <div class="pricing-table-header-small">
+                    <h2>Nice Board</h2>
+                    <h3>Description</h3>
                 </div>
-                <div class="span3 small">
-                    <div class="pricing-table-header-small">
-                        <h2>Nice Board</h2>
-                        <h3>Description</h3>
-                    </div>
-                    <div class="pricing-table-features">
-                        <p><strong>Card name</strong></p>
-                        <p><strong>Card name</strong></p>
-                        <p><strong>Card name</strong></p>
-                        <p><strong>Card name</strong></p>
-                        <p><strong>Card name</strong></p>
-                    </div>
-                    <div class="pricing-table-signup-small">
-                      <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Edit cards</a></p>
-                    </div>
+                <div class="pricing-table-features">
+                    <p><strong>Card name</strong></p>
+                    <p><strong>Card name</strong></p>
+                    <p><strong>Card name</strong></p>
+                    <p><strong>Card name</strong></p>
+                    <p><strong>Card name</strong></p>
                 </div>
-                    <div class="span3 medium">
-                        <div class="pricing-table-header-medium">
-                            <h2>Board3</h2>
-                            <h3>Description</h3>
-                        </div><div class="pricing-table-features">
-                            <p><strong>Card name</strong></p>
-                            <p><strong>Card name</strong></p>
-                            <p><strong>Card name</strong></p>
-                            <p><strong>Card name</strong></p>
-                            <p><strong>Card name</strong></p>
-                        </div>
-                        <div class="pricing-table-signup-medium">
-                            <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Edit cards</a></p>
-                        </div>
-                    </div>
+                <div class="pricing-table-signup-small">
+                    <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Edit cards</a></p>
+                </div>
+            </div>
+            <div class="span3 medium">
+                <div class="pricing-table-header-medium">
+                    <h2>Board3</h2>
+                    <h3>Description</h3>
+                </div>
+                <div class="pricing-table-features">
+                    <p><strong>Card name</strong></p>
+                    <p><strong>Card name</strong></p>
+                    <p><strong>Card name</strong></p>
+                    <p><strong>Card name</strong></p>
+                    <p><strong>Card name</strong></p>
+                </div>
+                <div class="pricing-table-signup-medium">
+                    <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Edit cards</a></p>
+                </div>
+            </div>
 
-                    <div class="span3 pro">
-                        <div class="pricing-table-header-pro">
-                            <h2>Board4</h2>
-                            <h3>Description</h3>
-                        </div><div class="pricing-table-features">
-                            <p><strong>Card name</strong></p>
-                            <p><strong>Card name</strong></p>
-                            <p><strong>Card name</strong></p>
-                            <p><strong>Card name</strong></p>
-                            <p><strong>Card name</strong></p>
-                        </div>
-                        <div class="pricing-table-signup-pro">
-                            <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Edit cards</a></p>
-                        </div>
-                    </div>
-             </div>
+            <div class="span3 pro" id="body">
+                <div class="pricing-table-header-pro">
+                    <h2>Board4</h2>
+                    <h3>Description</h3>
+                </div>
+                <div class="pricing-table-features">
+                    <p><strong>Card name</strong></p>
+                    <p><strong>Card name</strong></p>
+                    <p><strong>Card name</strong></p>
+                    <p><strong>Card name</strong></p>
+                    <p><strong>Card name</strong></p>
+                </div>
+                <div class="pricing-table-signup-pro">
+                    <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Edit cards</a></p>
+                </div>
+            </div>
         </div>
-    </body>
+    </div>
+    <script>
+        var boardlist = []
+
+        var checkboard = function () {
+            if (localStorage.getItem("boardlist") === null) {
+                var oldboard = { name: "oldboard", cards: "" };
+                var newboard = { name: "newboard", cards: "" };
+                var testboard = { name: "testboard", cards: "" };
+                boardlist = [oldboard, newboard, testboard];
+            }
+            else {
+                boardlist = loadboardlist();
+            }
+        };
+
+        var printboard = function () {
+            for (var i = 0; i < boardlist.length; i++) {
+                var para = document.createElement("div");
+                var para2 = document.createElement("h2");
+                var node = document.createTextNode(boardlist[i].name);
+                para2.appendChild(node);
+                para.appendChild(para2);
+                var element = document.getElementById("body");
+                element.appendChild(para);
+            }
+        };
+
+        var saveboard = function () {
+            boardlist[0].name = "localoldboard";
+            boardlist[1].name = "localnewboard";
+            boardlist[2].name = "localtestboard";
+            localStorage.setItem("boardlist", JSON.stringify(boardlist))
+
+        };
+
+        var loadboardlist = function () {
+            var bl = JSON.parse(localStorage.getItem("boardlist"));
+            return bl
+        };
+        //Create board
+        var createboard = function createBoard(item) {
+            $("body").append(
+                "<div class='col-sm-3'>" +
+                "<a href='/cards' style='color:white'><div class='col-sm-12 board'>" +
+                "<div class='boardTitle'><h1></h1></div>" +
+                "<h2></h2>" +
+                "</div></a></div>");
+            $(".board h1:last").html(item.name);
+            $(".board h2:last").html("cards <span class='label label-success'></span> ");
+            $(".label:last").html(item.cards.length);
+        }
+        checkboard();
+        printboard();
+        saveboard();
+        createboard(boardlist[1]);
+    </script>
+</body>
 {% endblock %}
+
 </html>
