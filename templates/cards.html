@@ -12,24 +12,27 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">New Card</h4>
+                            <h1 class="modal-title">New card</h1>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="cardTitle">Card Title:</label>
-                                <input type="text" class="form-control" id="cardTitle" autofocus></input>
+                                <label style="font-size:20px" for="cardTitle">Title:</label>
+                                <textarea rows="1" type="text" class="form-control" id="cardTitle" autofocus></textarea>
                             </div>
                             <div class="form-group">
-                               <label for="cardContent">Card Content:</label>
-                               <input type="text" class="form-control" id="cardContent" autofocus></input>
+                               <label style="font-size:20px" for="cardContent">Content:</label>
+                               <textarea rows="5" type="text" class="form-control" id="cardContent" autofocus></textarea>
                            </div>
                         </div>
                         <div class="modal-footer">
-                            <center>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                <button type="submit" id="add_new_card" class="btn btn-success"
-                                        data-dismiss="modal">Save</button>
-                            </center>
+                             <ul>
+                                <div type="submit"style="color: salmon; font-family:font2;font-size: xx-large;
+                                    cursor:pointer"class="round-button" id="add_new_card" data-dismiss="modal">
+                                    <div class="round-button-circle">
+                                    Save
+                                    </div>
+                                </div>
+                            </ul>
                         </div>
                     </div>
                 </form>
@@ -41,10 +44,10 @@
             <div class="col-sm-1">
                     <div class="col-sm-10 board create" data-toggle="modal" data-target="#myModal2">
                         <ul>
-                            <div style="color: white; font-size: larger" class="round-button"
+                            <div style="color: white; font-size: larger; cursor:pointer"class="round-button"
                                  data-dismiss="modal"><div class="round-button-circle">
                                  Create new card</div>
-
+                            </div>
                         </ul>
                     </div>
             </div>
