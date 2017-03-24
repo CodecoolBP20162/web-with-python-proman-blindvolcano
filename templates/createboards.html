@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+ {% extends "layout.html" %}
+    {% block head %}{{ super() }}{% endblock %}
+    {% block nav %}{{ super() }}{% endblock %}
+{% block content %}
+    <body>
+    <div class="pricing-table-signup-tiny">
+      <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Create or edit green board</a></p>
+    </div>
+    <div class="pricing-table-signup-small">
+      <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Create or edit orange board</a></p>
+    </div>
+     <div class="pricing-table-signup-medium">
+        <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Create or edit red board</a></p>
+    </div>
+    <div class="pricing-table-signup-pro">
+        <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Create or edit blue board</a></p>
+    </div>
+    </body>
+{% endblock %}
+</html>

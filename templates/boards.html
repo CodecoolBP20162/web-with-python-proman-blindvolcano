@@ -1,0 +1,77 @@
+<html>
+{% extends "layout.html" %}
+    {% block head %}{{ super() }}{% endblock %}
+    {% block nav %}{{ super() }}{% endblock %}
+{% block content %}
+    <body>
+    <div    style="background: white"
+    class="container-fluid">
+        <div class="row-fluid">
+            <div class="span3 tiny ">
+                <div class="pricing-table-header-tiny">
+                    <h2>Super Board</h2>
+                    <h3>Description</h3>
+                </div>
+                <div class="pricing-table-features">
+                    <p><strong>Card name</strong></p>
+                    <p><strong>Card name</strong></p>
+                    <p><strong>Card name</strong></p>
+                    <p><strong>Card name</strong></p>
+                    <p><strong>Card name</strong></p>
+                </div>
+                <div class="pricing-table-signup-tiny">
+                  <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Edit cards</a></p>
+                </div>
+                </div>
+                <div class="span3 small">
+                    <div class="pricing-table-header-small">
+                        <h2>Nice Board</h2>
+                        <h3>Description</h3>
+                    </div>
+                    <div class="pricing-table-features">
+                        <p><strong>Card name</strong></p>
+                        <p><strong>Card name</strong></p>
+                        <p><strong>Card name</strong></p>
+                        <p><strong>Card name</strong></p>
+                        <p><strong>Card name</strong></p>
+                    </div>
+                    <div class="pricing-table-signup-small">
+                      <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Edit cards</a></p>
+                    </div>
+                </div>
+                    <div class="span3 medium">
+                        <div class="pricing-table-header-medium">
+                            <h2>Board3</h2>
+                            <h3>Description</h3>
+                        </div><div class="pricing-table-features">
+                            <p><strong>Card name</strong></p>
+                            <p><strong>Card name</strong></p>
+                            <p><strong>Card name</strong></p>
+                            <p><strong>Card name</strong></p>
+                            <p><strong>Card name</strong></p>
+                        </div>
+                        <div class="pricing-table-signup-medium">
+                            <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Edit cards</a></p>
+                        </div>
+                    </div>
+
+                    <div class="span3 pro">
+                        <div class="pricing-table-header-pro">
+                            <h2>Board4</h2>
+                            <h3>Description</h3>
+                        </div><div class="pricing-table-features">
+                            <p><strong>Card name</strong></p>
+                            <p><strong>Card name</strong></p>
+                            <p><strong>Card name</strong></p>
+                            <p><strong>Card name</strong></p>
+                            <p><strong>Card name</strong></p>
+                        </div>
+                        <div class="pricing-table-signup-pro">
+                            <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Edit cards</a></p>
+                        </div>
+                    </div>
+             </div>
+        </div>
+    </body>
+{% endblock %}
+</html>
