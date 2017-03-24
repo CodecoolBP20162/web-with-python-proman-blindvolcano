@@ -10,39 +10,6 @@ $(document).ready(function () {
         this.cardcontent = cardcontent;
     }
 
-    // //Board list
-    // function listBoards(list_of_boards) {
-    //     for (var oneBoard in list_of_boards) {
-    //         createBoard(list_of_boards[oneBoard]);
-    //     }
-    // };
-
-    // //Add new board
-    // $("#add_new_board").click(function () {
-    //     var board_title = $("#boardTitle").val();
-    //     var board = new Board(board_title);
-    //     localStorage.setItem("boardTitle", board_title)
-    //     boardList.push(board);
-    //     localStorage.setItem("boardList", JSON.stringify(boardList));
-    //     createBoard(board);
-    //     board_title = $("#boardTitle").val("");
-    // });
-
-
-
-    // //Create board
-    // function createBoard(item) {
-    //     $(".divBoard").append(
-    //         "<div class='col-sm-3'>" +
-    //         "<a href='/cards' style='color:white'><div class='col-sm-12 board'>" +
-    //         "<div class='boardTitle'><h1></h1></div>" +
-    //         "<h2></h2>" +
-    //         "</div></a></div>");
-    //     $(".board h1:last").html(item.title);
-    //     $(".board h2:last").html("cards <span class='label label-success'></span> ");
-    //     $(".label:last").html(item.cardlist.length);
-    // }
-
     //Card list
     function listCards(list_of_cards) {
         for (var card in list_of_cards) {
@@ -99,8 +66,6 @@ $(document).ready(function () {
         card_content= $("#cardContent").val("");
 
     });
-
-
 
     getBoardTitle();
     detailedBoard();
