@@ -4,6 +4,19 @@
     {% block nav %}{{ super() }}{% endblock %}
 {% block content %}
 <body>
+<table style="width:100%">
+  <tr>
+    <th>new</th>
+    <th>in progress</th>
+    <th>review</th>
+    <th>done</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+
     <div class="container-fluid">
         <div class='divBoardHeader'></div>
         <div class="modal fade in" id="myModal2" role="dialog">
@@ -37,9 +50,8 @@
                     </div>
                 </form>
             </div>
-        </div>
-        <br>
-        <br>
+        </div><br><br>
+
         <div class="row divCard" style="cursor: pointer">
             <div class="col-sm-1">
                     <div class="col-sm-10 board create" data-toggle="modal" data-target="#myModal2">
@@ -52,6 +64,9 @@
                     </div>
             </div>
         </div>
+
     </div>
+</tr>
+</table>
 </body>
 {% endblock %}

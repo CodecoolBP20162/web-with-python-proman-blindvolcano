@@ -23,8 +23,12 @@
 	}
 
 body {
-    background-image: url("pics/background.png");
-	background-size: 1300px 800px;
+    background-image: url("pics/background.png") ;
+	background: url(pics/background.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 	ul {
@@ -34,9 +38,8 @@ body {
 
 	li {
 		list-style: none;
-		position: fixed;
-		left: 600px;
-		bottom: 180px;
+		position: relative;
+		left: -1%;
 		display: inline-block;
 		width: 100px;
 		height: 100px;
@@ -229,5 +232,11 @@ body {
       width: 300px;
       border-radius: 50%;
       border: 1px solid red;
+
+    }
+
+th{
+font-size: 30px;
+padding: 10%;
 
     }

@@ -67,6 +67,7 @@ $(document).ready(function () {
 
     });
 
+
     getBoardTitle();
     detailedBoard();
     $('.divCard').sortable({
