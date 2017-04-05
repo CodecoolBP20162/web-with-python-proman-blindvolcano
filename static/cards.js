@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var boardList = [];
-    function Board(title, boardcontent, cardlist = []) {
+    function Board(title, cardlist = []) {
         this.title = title;
         this.cardlist = cardlist;
     };
@@ -37,47 +37,17 @@ $(document).ready(function () {
     };
 
     //Card Create
-    function createBoard(item) {
-        $(".divBoard").append(
-            "<div class='col-sm-3'>" +
-            "<div class='col-sm-12 card'>" +
-            "<div class='cardTitle'><h1></h1></div>" +
-            "<div><h2></h2></div>" +
-            "</div></div>");
-        $(".board h1:last").html(item.title);
-    }
-
-     function createCard(item) {
+    function createCard(item) {
         $(".divCard").append(
             "<div class='col-sm-3'>" +
             "<div class='col-sm-12 card'>" +
-            "<div class='boardTitle'><h1></h1></div>" +
+            "<div class='cardTitle'><h1></h1></div>" +
             "<div><h2></h2></div>" +
             "</div></div>");
         $(".card h1:last").html(item.title);
         $(".card h2:last").html(item.cardcontent);
 
     }
-
-    tasks([document.getElementById("card_table"),
-        document.getElementById("new"),
-        document.getElementById("inprogress"),
-        document.getElementById("review"),
-        document.getElementById("done")], {
-        });
-
-    $("#add_new_board").click(function () {
-        var card_title = $("#boardTitle").val();
-        var board = new Board(board_title);
-        for (board in boardList) {
-            if (boardList[board].title === localStorage.getItem("boardTitle")) {
-                boardList[board].cardlist.push(card);
-            }
-        }
-        localStorage.setItem("boardList", JSON.stringify(boardList));
-        createBoard(board);
-        board_title = $("#boardTitle").val("");
-        {
 
 
     // New cards
@@ -88,54 +58,58 @@ $(document).ready(function () {
         for (board in boardList) {
             if (boardList[board].title === localStorage.getItem("boardTitle")) {
                 boardList[board].cardlist.push(card);
-            }
-        }
+            };
+        };
         localStorage.setItem("boardList", JSON.stringify(boardList));
         createCard(card);
         card_title = $("#cardTitle").val("");
-        card_content = $("#cardContent").val("");
-        {
-            if (card.status == "nothing") {
-                $("#card_table").append(div);
-            } else if (card.status == "new") {
-                $("#new").append(div);
-            } else if (card.status == "inprogress") {
-                $("#in-progress").append(div);
-            } else if (card.status == "review") {
-                $("#review").append(div);
-            } else if (card.status == "done") {
-                $("#done").append(div);
-            }
+        card_content= $("#cardContent").val("");
 
+    });
 
-            getBoardTitle();
-            detailedBoard();
-            $('.divCard').sortable({
-                update: function (even, ui) {
-                    for (board in boardList) {
-                        if (boardList[board].title === localStorage.getItem("boardTitle")) {
-                            boardList[board].cardlist = [];
-                        }
-                        ;
-                    }
-                    ;
-                    $('.card').each(function () {
-                        var card_title = $(this).find("h1").html();
-                        var card_content = $(this).find("h2").html();
-                        var card = new Card(card_title, card_content);
-                        for (board in boardList) {
-                            if (boardList[board].title === localStorage.getItem("boardTitle")) {
-                                boardList[board].cardlist.push(card);
-                            }
-                            ;
-                        }
-                        ;
-                    });
-                    localStorage.setItem("boardList", JSON.stringify(boardList));
-                }
+       function createBoard(item) {
+        $(".divBoard").append(
+            "<div class='col-sm-3'>" +
+            "<a href='/cards' style='color:white'><div class='col-sm-10 board'>" +
+            "<div class='boardTitle'><h1></h1></div>" +
+            "<h3></h3>" +
+            "</div></a></div>");
+        $(".board h1:last").html(item.title);
+        $(".board h3:last").html("cards <span class='label'></span> ");
+        $(".label:last").html(item.cardlist.length);
+    }
 
+     $("#add_new_board").click(function () {
+        var board_title = $("#boardTitle").val();
+        var board = new Board(board_title);
+        localStorage.setItem("boardTitle", board_title)
+        boardList.push(board);
+        localStorage.setItem("boardList", JSON.stringify(boardList));
+        createBoard(board);
+        board_title = $("#boardTitle").val("");
+    });
+
+    getBoardTitle();
+    detailedBoard();
+    $('.divCard').sortable({
+        update: function (even, ui) {
+            for (board in boardList) {
+                if (boardList[board].title === localStorage.getItem("boardTitle")) {
+                    boardList[board].cardlist = [];
+                };
+            };
+            $('.card').each(function () {
+                var card_title = $(this).find("h1").html();
+                var card_content = $(this).find("h2").html();
+                var card = new Card(card_title, card_content);
+                for (board in boardList) {
+                    if (boardList[board].title === localStorage.getItem("boardTitle")) {
+                        boardList[board].cardlist.push(card);
+                    };
+                };
             });
-
+            localStorage.setItem("boardList", JSON.stringify(boardList));
         }
-    })
+    });
+
 });
