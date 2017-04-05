@@ -6,16 +6,66 @@
 {% block content %}
     <body>
     <div class="pricing-table-signup-tiny">
-      <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Create or edit green board</a></p>
+      <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Create green board</a></p>
     </div>
+
     <div class="pricing-table-signup-small">
-      <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Create or edit orange board</a></p>
+      <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Create orange board</a></p>
     </div>
+
      <div class="pricing-table-signup-medium">
-        <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Create or edit red board</a></p>
+        <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Create red board</a></p>
     </div>
+
     <div class="pricing-table-signup-pro">
-        <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Create or edit blue board</a></p>
+        <p style="font-size: 30px"><a href="{{ url_for('cards') }}">Create blue board</a></p>
+    </div>
+
+    <div class="container">
+        <div class="table" id="board_table"></div>
+        </div>
+            <div class="container-fluid" id="prelist">
+        <div class="row row-left" id="row">
+           <div class="row divBoard" style="cursor: pointer">
+            <div class="col-sm-1">
+                <div class="col-sm-10 board create" data-toggle="modal" data-target="#myModal3">
+                    <ul>
+                        <div style="color: white; font-size: larger; cursor:pointer"class="round-button"
+                             data-dismiss="modal">
+                            <div class="round-button-circle">Create new board</div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+    <div class="container-fluid">
+    <div class='divBoardHeader'></div>
+    <div class="modal fade in" id="myModal3" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <form>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h1 class="modal-title">New Board</h1>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label style="font-size:20px" for="boardTitle">Title:</label>
+                            <textarea rows="1" type="text" class="form-control" id="borderTitle" autofocus></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                         <ul>
+                            <div type="submit"style="color: salmon; font-family:font2;font-size: xx-large;
+                                cursor:pointer"class="round-button" id="add_new_board" data-dismiss="modal">
+                                <div class="round-button-circle">
+                                CREATE CARDS!
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div><br><br>
     </div>
     </body>
 {% endblock %}
