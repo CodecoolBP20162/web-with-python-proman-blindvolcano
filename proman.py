@@ -51,6 +51,12 @@ def boards2():
 
 @app.route("/save")
 def save():
+    json = get_json(force=True, silent=False, cache=True)
+    pass
+
+
+@app.route("/load")
+def load():
     pass
 
 if __name__ == "__main__":
