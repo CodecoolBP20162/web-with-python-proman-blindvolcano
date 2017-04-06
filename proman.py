@@ -1,4 +1,5 @@
 import sys
+import json
 from flask import Flask, request, redirect, url_for, render_template, g
 from model import *
 from example_data import *
@@ -49,18 +50,26 @@ def boards2():
     return render_template('createboards.html')
 
 
-@app.route("/save")
+@app.route("/save", methods=['POST'])
 def save():
     json = get_json(force=True, silent=False, cache=True)
-    pass
+
+    return "success"
 
 
-@app.route("/load")
+@app.route("/load", methods=['GET'])
 def load():
     boarddata = []
+    carddata = []
     for boards in Board.select():
-        boarddata.append(boards)
-    return boarddata[1].board_name
+        boardtemp = [boards.id, boards.board_name, boards.board_order_id]
+        boarddata.append(boardtemp)
+    for cards in Card.select():
+        cardtemp = [cards.id, cards.card_name, cards.card_order_id, cards.related_board.id]
+        carddata.append(cardtemp)
+    data = [boarddata, carddata]
+    return json.dumps(data)
+
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
