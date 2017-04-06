@@ -51,13 +51,10 @@ var Localstate = function (savedata) {
 
     this.load = function () {
         json_obj = JSON.parse(localStorage.getItem('boardlist'));
-        console.log("should be loaded");
     }
 
     this.save = function () {
-        localStorage.setItem('test', "shit works fool");
         localStorage.setItem('boardlist', JSON.stringify(json_obj));
-        console.log("should be saved");
     }
 };
 
