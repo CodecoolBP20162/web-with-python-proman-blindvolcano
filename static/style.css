@@ -13,6 +13,10 @@
     src: url(fonts/RBNo2Light.otf);
 }
 
+h3 {
+		color: #0a4b3e;
+	}
+
 * {
     margin: 0;
     padding: 0;
@@ -31,6 +35,7 @@ body {
   background-size: cover;
 }
 
+
 	ul {
 		margin: 100px auto;
 		text-align: center;
@@ -43,6 +48,17 @@ body {
 		display: inline-block;
 		width: 100px;
 		height: 100px;
+	}
+
+	span.label {
+		color: black;
+		size: 300px;
+		background-color: lightgreen;
+		background-size: 100%;
+		font-size: 50%;
+		font-family: font1;
+		border-color: black;
+		border-style: double;
 	}
 
 	@-moz-keyframes rotate {
@@ -242,5 +258,11 @@ padding: 10%;
     }
 
 .boardTitle {
-  background-color: palevioletred;
+  background-color: lightcyan;
+}
+
+.board {
+ 	border-style: dashed;
+    background: lightseagreen;
+    box-shadow: 3px 3px 5px coral;
 }

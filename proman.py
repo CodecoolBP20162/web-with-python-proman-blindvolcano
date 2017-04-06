@@ -22,7 +22,7 @@ def boards():
 
 @app.route('/createboards')
 def boards2():
-    return render_template('createboards.html')
+    return render_template('boards.html')
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=5000)

@@ -11,23 +11,22 @@
         <div class="row row-left" id="row">
            <div class="row divCard" style="cursor: pointer">
             <div class="col-sm-1">
-                <div class="col-sm-10 board create" data-toggle="modal" data-target="#myModal2">
+                <div data-toggle="modal" data-target="#myModal2">
                     <ul>
-                        <div style="color: white; font-size: larger; cursor:pointer"class="round-button"
+                        <div style="color: white; font-size: larger; cursor:pointer"
                              data-dismiss="modal">
-                            <div class="round-button-circle">Create new card</div>
+                            <div>Create new card</div>
                         </div>
                     </ul>
+                    {% for card in cards%}
+                        <div class="edit">
+                            <a href="/{{board_id}}/delete/{{card.id}}" class="btn btn-danger btn-sm">Delete</a>
+                            <button class="btn btn-info btn-sm edit" data-toggle="modal"
+                                    data-target="#myModalEdit" data-cardId={{card.id}}>Edit</button>
+                        {% endfor %}
                 </div>
             </div>
-            <div class="container-fluid" id="tasks">
-            <div class="row row-centered" id="rows">
-                <div class="col-sm-2" id="new">new</div>
-                <div class="col-sm-2" id="inprogress">in progress</div>
-                <div class="col-sm-2" id="review">review</div>
-                <div class="col-sm-2" id="done">done</div>
-            </div>
-            </div>
+
 
     <div class="container-fluid">
         <div class='divBoardHeader'></div>
@@ -59,6 +58,7 @@
                                 </div>
                             </ul>
                         </div>
+					</div>
                     </div>
                 </form>
             </div>
