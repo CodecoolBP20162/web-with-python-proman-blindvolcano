@@ -28,22 +28,22 @@ p {
 h1 {
 text-align: center;
 font-family: font2;
-font-size: 50px;
-color: black;
-
+font-size: 40px;
+color: white;
 }
 
 h2 {
 text-align: center;
 font-family: font2;
-font-size: 30px;
-color: black;
+font-size: 25px;
+color: midnightblue;
 }
 
 h3 {
-		color: black;
-		font-size: 20%;
-	}
+color: lightseagreen;
+font-size: 30px;
+
+}
 
 * {
 margin: 0;
@@ -64,22 +64,23 @@ body {
 }
 
 
-	ul {
-		margin: 100px auto;
-		text-align: center;
-	}
+ul {
+	margin: 100px auto;
+	text-align: center;
+}
 
 li {
 	list-style: none;
 	position: relative;
-	left: -1%;
+	left: 0%;
 	display: inline-block;
 	width: 100px;
 	height: 100px;
 }
 
 label {
-	color: black;
+	color: midnightblue;
+	font-size: 20px;
 }
 
 span.label {
@@ -114,14 +115,14 @@ left: 80%;
 top: 80%;
         }
 
-  .roundbutton{
-      display:block;
-      height: 300px;
-      width: 300px;
-      border-radius: 50%;
-      border: 1px solid red;
+.roundbutton{
+  display:block;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  border: 1px solid red;
 
-    }
+}
 
 th{
 font-size: 30px;
@@ -130,11 +131,10 @@ padding: 10%;
     }
 
 .boardTitle {
-  background-color: lightcyan;
 }
 
 .board {
- 	border-style: dashed;
+ 	border-style: dotted;
     background: lightseagreen;
     box-shadow: 3px 3px 5px coral;
 }
@@ -213,18 +213,18 @@ a.yellow:hover {
 	color: rgba(252,227,1,1);
 }
 
-	.round span.round {
-		display: block;
-		opacity: 0;
-		-webkit-transition: all .5s ease-in-out;
-		-moz-transition: all .5s ease-in-out;
-		-o-transition: all .5s ease-in-out;
-		transition: all .5s ease-in-out;
-		font-size: 1px;
-		border: none;
-		padding: 40% 20% 0 20%;
-		color: #fff;
-	}
+.round span.round {
+	display: block;
+	opacity: 0;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+	font-size: 1px;
+	border: none;
+	padding: 40% 20% 0 20%;
+	color: #fff;
+}
 
 .round span:hover {
 	opacity: .85;
@@ -237,5 +237,8 @@ a.yellow:hover {
 
 .yellow span {
 	background: rgba(161,145,0,.7);
+}
 
+.buttonSave {
+ text-align: center;
 }
