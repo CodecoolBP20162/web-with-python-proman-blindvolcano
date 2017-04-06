@@ -1,4 +1,5 @@
 import sys
+import json
 from flask import Flask, request, redirect, url_for, render_template, g
 from model import *
 from example_data import *
@@ -44,12 +45,55 @@ def boards():
     return render_template('boards.html')
 
 
-@app.route("/save")
+@app.route('/createboards')
+def boards2():
+    return render_template('createboards.html')
+
+
+@app.route("/save", methods=['POST'])
 def save():
-    pass
+    json = request.get_json(force=True, silent=False, cache=True)
+    boarddata = json[0]
+    carddata = json[1]
+    for i in boarddata:
+        query = Board.select().where(Board.id == i[0])
+        if query.exists():
+            board = Board.select().where(Board.id == i[0]).get()
+            board.board_name = i[1]
+            board.board_order_id = i[2]
+            board.save()
+        else:
+            Board.create(id=i[0], board_name=i[1], board_order_id=i[2])
+    for i in carddata:
+        query = Card.select().where(Card.id == i[0])
+        if query.exists():
+            card = Card.select().where(Card.id == i[0]).get()
+            card.card_name = i[1]
+            card.board_order_id = i[2]
+            card.related_board = i[3]
+        else:
+            Card.create(id=boarddata[i][0], card_name=boarddata[i][1],
+                        board_order_id=boarddata[i][2], related_board=boarddata[i][3])
+
+    return "success"
+
+
+@app.route("/load", methods=['GET'])
+def load():
+    boarddata = []
+    carddata = []
+    for boards in Board.select():
+        boardtemp = [boards.id, boards.board_name, boards.board_order_id]
+        boarddata.append(boardtemp)
+    for cards in Card.select():
+        cardtemp = [cards.id, cards.card_name, cards.card_order_id, cards.related_board.id]
+        carddata.append(cardtemp)
+    data = [boarddata, carddata]
+    return json.dumps(data)
+
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         if sys.argv[1] == "initdb":
             init_db()
-    app.run(host='127.0.0.1', port=5000)
+    app.run(debug=True, host='127.0.0.1', port=5000)
