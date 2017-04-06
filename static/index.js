@@ -5,6 +5,18 @@ $(document).ready(function () {
         this.cardlist = cardlist;
     };
 
+    // Trashcan
+    $(function() {
+    $(".col-sm-3").draggable();
+
+    $('#trash').droppable({
+        drop: function(event, ui) {
+            $(ui.draggable).remove();
+            }
+        });
+    });
+
+
     function Card(title, cardcontent) {
         this.title = title;
         this.cardcontent = cardcontent;
