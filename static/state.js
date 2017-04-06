@@ -1,6 +1,6 @@
 var saveUrl = "http://127.0.0.1:5000/save"
 var loadUrl = "http://127.0.0.1:5000/load"
-var json_obj = none
+var json_obj;
 
 var Getter = function (yourUrl) {
     var Httpreq = new XMLHttpRequest(); // a new request
@@ -12,7 +12,7 @@ var Getter = function (yourUrl) {
 var Setter = function (yourUrl) {
     var Httpreq = new XMLHttpRequest(); // a new request
     Httpreq.open("POST", yourUrl, false);
-    Httpreq.send(JSON.stringify(json_obj);
+    Httpreq.send(JSON.stringify(json_obj));
     return Httpreq.responseText;
 }
 
@@ -37,7 +37,7 @@ var DBstat = function (savedata) {
     this.savedata = savedata;
 
     this.load = function () {
-        json_obj = JSON.parse(Get(loadUrl));
+        json_obj = JSON.parse(Getter(loadUrl));
     }
 
     this.save = function () {
@@ -49,7 +49,7 @@ var Localstate = function (savedata) {
     this.savedata = savedata;
 
     this.load = function () {
-        json_obj =
+        //json_obj =
         //Load data from local storage
     }
 
@@ -59,3 +59,4 @@ var Localstate = function (savedata) {
 };
 
 var datahandler = new DataHandler();
+datahandler.load();

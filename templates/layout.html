@@ -1,41 +1,40 @@
-<!doctype html>
-{% block head %}
-    <head>
-      <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
-        <link href="{{ url_for('static', filename='boards.css') }}" rel="stylesheet">
-        <link href="{{ url_for('static', filename='cards.css') }}" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-        <script src="../static/cards.js"></script>
-        <script src="../static/index.js"></script>
-            <meta charset="utf-8">
-        <title>Tables</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta name="description" content="">
-            <meta name="author" content="">
-        <link rel="stylesheet" href="style.css" type="text/css"/>
-    </head>
-{% endblock %}
-{% block nav %}
+<!doctype html> {% block head %}
 
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
+<head>
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='boards.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='cards.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../static/cards.js"></script>
+    <script src="../static/index.js"></script>
+    <script src="../static/state.js"></script>
+    <meta charset="utf-8">
+    <title>Tables</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+{% endblock %} {% block nav %}
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                  data-target="#bs-example-navbar-collapse-1">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
           </button>
-            <a class="navbar-brand" href="#"><img style="max-width:80px; margin-top: -15px;"
-                 src="/static/pics/logo.png"></a>
-          <a class="navbar-brand" href="{{ url_for('root') }}">Home</a>
+            <a class="navbar-brand" href="#"><img style="max-width:80px; margin-top: -15px;" src="/static/pics/logo.png"></a>
+            <a class="navbar-brand" href="{{ url_for('root') }}">Home</a>
             <a class="navbar-brand" href="{{ url_for('boards') }}">My Boards</a>
         </div>
-      </div>
-    </nav>
+    </div>
+</nav>
+
 <body>
     <div id="content">
-{% block content %}{% endblock %}</div>
+        {% block content %}{% endblock %}</div>
 </body>
 {% endblock %}
