@@ -20,7 +20,7 @@ var Setter = function (yourUrl) {
 //----------------State Pattern for saving and laoding data-----------
 
 var DataHandler = function () {
-    var currentState = new DBstat(this);
+    var currentState = new DBstate(this);
 
     this.change = function (state) {
         currentState = state;
@@ -34,7 +34,7 @@ var DataHandler = function () {
     }
 }
 
-var DBstat = function (savedata) {
+var DBstate = function (savedata) {
     this.savedata = savedata;
 
     this.load = function () {
@@ -50,12 +50,11 @@ var Localstate = function (savedata) {
     this.savedata = savedata;
 
     this.load = function () {
-        //json_obj =
-        //Load data from local storage
+        json_obj = JSON.parse(localStorage.getItem('boardlist'));
     }
 
     this.save = function () {
-        //save data to local storage
+        localStorage.setItem('boardlist', JSON.stringify(json_obj));
     }
 };
 
