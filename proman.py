@@ -46,7 +46,7 @@ def boards():
 
 @app.route('/createboards')
 def boards2():
-    return render_template('createboards.html')
+    return render_template('boards.html')
 
 
 @app.route("/save")

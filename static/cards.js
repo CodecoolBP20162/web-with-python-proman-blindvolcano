@@ -75,7 +75,6 @@ $(document).ready(function () {
             "<h3></h3>" +
             "</div></a></div>");
         $(".board h1:last").html(item.title);
-        $(".board h3:last").html("cards <span class='label'></span> ");
         $(".label:last").html(item.cardlist.length);
     }
 
