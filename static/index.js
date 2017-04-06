@@ -5,7 +5,7 @@ $(document).ready(function () {
         this.cardlist = cardlist;
     };
 
-    // Trashcan
+    // Trash can
     $(function() {
     $(".col-sm-3").draggable();
 

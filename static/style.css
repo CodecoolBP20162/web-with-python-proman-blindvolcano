@@ -236,3 +236,15 @@ a.yellow:hover {
 .buttonSave {
  text-align: center;
 }
+
+#trash {
+
+	position: fixed;
+    bottom: 20;
+    right: 50;
+}
+
+#cards_table {
+	text-align: center;
+	position: fixed;
+}
