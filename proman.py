@@ -57,10 +57,13 @@ def save():
 
 @app.route("/load")
 def load():
-    pass
+    boarddata = []
+    for boards in Board.select():
+        boarddata.append(boards)
+    return boarddata[1].board_name
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         if sys.argv[1] == "initdb":
             init_db()
-    app.run(host='127.0.0.1', port=5000)
+    app.run(debug=True, host='127.0.0.1', port=5000)
