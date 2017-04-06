@@ -52,7 +52,28 @@ def boards2():
 
 @app.route("/save", methods=['POST'])
 def save():
-    json = get_json(force=True, silent=False, cache=True)
+    json = request.get_json(force=True, silent=False, cache=True)
+    boarddata = json[0]
+    carddata = json[1]
+    for i in boarddata:
+        query = Board.select().where(Board.id == i[0])
+        if query.exists():
+            board = Board.select().where(Board.id == i[0]).get()
+            board.board_name = i[1]
+            board.board_order_id = i[2]
+            board.save()
+        else:
+            Board.create(id=i[0], board_name=i[1], board_order_id=i[2])
+    for i in carddata:
+        query = Card.select().where(Card.id == i[0])
+        if query.exists():
+            card = Card.select().where(Card.id == i[0]).get()
+            card.card_name = i[1]
+            card.board_order_id = i[2]
+            card.related_board = i[3]
+        else:
+            Card.create(id=boarddata[i][0], card_name=boarddata[i][1],
+                        board_order_id=boarddata[i][2], related_board=boarddata[i][3])
 
     return "success"
 

@@ -12,6 +12,7 @@ var Getter = function (yourUrl) {
 var Setter = function (yourUrl) {
     var Httpreq = new XMLHttpRequest(); // a new request
     Httpreq.open("POST", yourUrl, false);
+    Httpreq.setRequestHeader("Content-Type", "application/json");
     Httpreq.send(JSON.stringify(json_obj));
     return Httpreq.responseText;
 }
