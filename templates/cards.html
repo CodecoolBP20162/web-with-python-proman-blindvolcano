@@ -5,7 +5,7 @@
 {% block content %}
 <body>
     <!-- Here is the trash can, and there is no design for it -->
-    <div id="trash">trash</div>
+    <div id="trash"><img style="max-width:300px;" src="/static/pics/volcan.png"></div>
     <div class="container">
         <div class="table" id="cards_table"></div>
         </div>
@@ -15,7 +15,7 @@
             <div class="col-sm-1">
                 <div data-toggle="modal" data-target="#myModal2">
                     <ul>
-                        <div style="color: white; font-size: larger; cursor:pointer"
+                        <div style="color: white; font-size: larger; cursor:pointer; position:fixed; top:25%; left:10;"
                              data-dismiss="modal">
                             <div>Create new card</div>
                         </div>
@@ -32,25 +32,23 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h1 class="modal-title">New card</h1>
+                            <h1  style="color: black";class="modal-title">New card</h1>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label style="font-size:20px" for="cardTitle">Title:</label>
+                                <label style="font-size:20px" for="cardTitle">Title</label>
                                 <textarea rows="1" type="text" class="form-control" id="cardTitle" maxlength="8" autofocus></textarea>
                             </div>
                             <div class="form-group">
-                               <label style="font-size:20px" for="cardContent">Content:</label>
+                               <label style="font-size:20px" for="cardContent">Content</label>
                                <textarea rows="5" type="text" class="form-control" id="cardContent" maxlength="80" autofocus></textarea>
                            </div>
                         </div>
                         <div class="modal-footer">
                              <ul>
-                                <div type="submit"style="color: salmon; font-family:font2;font-size: xx-large;
-                                    cursor:pointer"class="round-button" id="add_new_card" data-dismiss="modal">
-                                    <div class=buttonSave>
-                                    Save
-                                    </div>
+                                <div type="submit"style="color: salmon; font-family:font2; text-align: center;font-size: xx-large;
+                                    cursor:pointer" id="add_new_card" data-dismiss="modal">
+                                    <div class=buttonSave>Save</div>
                                 </div>
                             </ul>
                         </div>
