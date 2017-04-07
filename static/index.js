@@ -5,6 +5,18 @@ $(document).ready(function () {
         this.cardlist = cardlist;
     };
 
+    // Trash can
+    $(function() {
+    $(".col-sm-3").draggable();
+
+    $('#trash').droppable({
+        drop: function(event, ui) {
+            $(ui.draggable).remove();
+            }
+        });
+    });
+
+
     function Card(title, cardcontent) {
         this.title = title;
         this.cardcontent = cardcontent;
@@ -67,6 +79,27 @@ $(document).ready(function () {
 
     });
 
+       function createBoard(item) {
+        $(".divBoard").append(
+            "<div class='col-sm-3'>" +
+            "<a href='/cards' style='color:white'><div class='col-sm-10 board'>" +
+            "<div class='boardTitle'><h1></h1></div>" +
+            "<h3></h3>" +
+            "</div></a></div>");
+        $(".board h1:last").html(item.title);
+        $(".label:last").html(item.cardlist.length);
+    }
+
+     $("#add_new_board").click(function () {
+        var board_title = $("#boardTitle").val();
+        var board = new Board(board_title);
+        localStorage.setItem("boardTitle", board_title)
+        boardList.push(board);
+        localStorage.setItem("boardList", JSON.stringify(boardList));
+        createBoard(board);
+        board_title = $("#boardTitle").val("");
+    });
+
     getBoardTitle();
     detailedBoard();
     $('.divCard').sortable({
@@ -89,4 +122,5 @@ $(document).ready(function () {
             localStorage.setItem("boardList", JSON.stringify(boardList));
         }
     });
+
 });
